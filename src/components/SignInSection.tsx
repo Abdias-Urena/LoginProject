@@ -3,12 +3,13 @@ import Image from "next/image";
 import { GiPadlock } from "react-icons/gi";
 import SocialMediaSection from "./SocialMediaSection";
 import { Toaster, toast } from "sonner"
+import Link from "next/link";
 
 export default function SignInSection() {
   return (
     <>
     <Toaster closeButton richColors position="bottom-center"/>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div id="SignIn" className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <Image
             className="mx-auto h-40 w-40"
@@ -52,12 +53,12 @@ export default function SignInSection() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
-                    href="#"
+                  <Link
+                    href="/ForgotPass"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="mt-2">
@@ -81,15 +82,13 @@ export default function SignInSection() {
               </button>
             </div>
           </form>
-
           <p className="mt-10 text-center text-sm text-gray-500">
             Already have an account?{" "}
-            <a
-              href="#"
+            <Link href="/SignUp"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Sign up here!
-            </a>
+            </Link>
           </p>
           <SocialMediaSection/>
         </div>
